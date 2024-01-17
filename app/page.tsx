@@ -13,7 +13,7 @@ export default function Page() {
       <SiteHeader setImages={setImages} />
       <div className="flex-1">
         <div className="flex size-full flex-col">
-          <div className="w-[calc(100% - 200px)] flex h-1/2 items-center justify-center lg:size-full">
+          <div className="flex items-center justify-center lg:size-full">
             <div className="flex size-full min-h-[70vh] items-center justify-center overflow-hidden">
               <Coverflow
                 images={IMAGES}
