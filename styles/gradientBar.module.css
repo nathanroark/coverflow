@@ -1,0 +1,77 @@
+.gradientBar {
+  position: relative;
+  width: 2px;
+  height: stretch;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: #808080;
+  border-radius: 2rem;
+
+  /* Sex on the Beach */
+  /* --g1: rgb(98, 0, 234);
+  --g2: rgb(236, 64, 122);
+  --g3: rgb(253, 216, 53); */
+
+  /* Poimandres */
+  --g1: rgb(129, 0, 234);
+  --g2: rgb(58, 92, 195);
+  --g3: rgb(29, 148, 163);
+  --g4: rgb(34, 213, 156);
+
+  /* OCEANIC */
+  /* --g1: rgb(134, 239, 172);
+  --g2: rgb(59, 130, 246);
+  --g3: rgb(147, 51, 234); */
+
+  /* HYPER */
+  /* --g1: rgb(236, 72, 153);
+  --g2: rgb(239, 68, 68);
+  --g3: rgb(234, 179, 8); */
+}
+
+.gradientBar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: var(--g1); */
+  background: linear-gradient(
+    90deg,
+    var(--g1),
+    var(--g2),
+    var(--g3),
+    var(--g4),
+    var(--g3),
+    var(--g2)
+  );
+  background-size: 600%;
+  animation: animate linear 4s infinite;
+  filter: blur(4px);
+}
+
+.gradientBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: var(--g1); */
+  background: linear-gradient(
+    90deg,
+    var(--g1),
+    var(--g2),
+    var(--g3),
+    var(--g4),
+    var(--g3),
+    var(--g2)
+  );
+  background-size: 600%;
+  animation: animate linear 4s infinite;
+  filter: blur(4px);
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}

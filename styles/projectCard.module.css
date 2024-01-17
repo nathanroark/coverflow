@@ -1,0 +1,197 @@
+.card {
+  aspect-ratio: 1 / 1.2;
+  /* border: 0.2vmin solid rgb(100, 100, 100); */
+  /* cursor: pointer; */
+  position: relative;
+  /* width: 100%; */
+  /* max-width: 36rem; */
+}
+
+.card:hover:before {
+  background-position: 100% 100%;
+  transform: scale(1.06, 1.04);
+}
+
+.card:hover > .cardContent {
+  background-position: -18% -12%;
+}
+
+.card:hover > .cardIcon {
+  color: white;
+}
+
+.card:hover > .cardContent > .cardTop > .cardSubtitle > .cardSubtitleWord {
+  opacity: 1;
+  transform: translateY(0%);
+  transition:
+    opacity 0ms,
+    transform 200ms cubic-bezier(0.9, 0.06, 0.15, 0.9);
+}
+
+.card:hover > .cardContent > .cardTop {
+  opacity: 1;
+  transform: scale(1.05);
+  background: rgb(0, 0, 0, 0.5);
+  transition:
+    opacity 0ms,
+    transform 200ms cubic-bezier(0.9, 0.06, 0.15, 0.9);
+}
+
+.card:hover > .cardContent > .cardBottom > .techStack > .techItem {
+  transform: scale(1.05);
+  transition:
+    opacity 0ms,
+    transform 200ms cubic-bezier(0.9, 0.06, 0.15, 0.9);
+}
+
+.card:before {
+  /* previous colors */
+  /* background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    rgb(98, 0, 235) 66%,
+    rgb(236, 65, 122) 83.5%,
+    rgb(253, 216, 53) 100%
+  ); */
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    rgb(134, 239, 172) 66%,
+    rgb(59, 130, 246) 83.5%,
+    rgb(128, 90, 213) 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  left: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  transition:
+    background-position 350ms ease,
+    transform 350ms ease;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.cardContent {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.2) 8%,
+    transparent 8%
+  );
+  background-position: 0% 0%;
+  background-size: 2.5rem 2.5rem;
+  padding: 1rem;
+  position: relative;
+  transition: background-position 350ms ease;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.cardTitle,
+.cardSubtitle {
+  font-family: "Anek Latin", sans-serif;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.cardTop {
+  background: rgb(0, 0, 0, 00);
+  padding: 1rem;
+  transition: none;
+  border-radius: 0.5rem;
+}
+
+.cardTitle {
+  font-size: min(calc(12px + 1.8vw), 1.8rem);
+}
+
+.cardSubtitle {
+  font-size: min(calc(12px + 1.2vw), 1.2rem);
+  margin-top: min(0.75vh, 0.9rem);
+}
+
+.cardSubtitleWord {
+  display: inline-block;
+  margin: 0rem 0.2rem;
+  opacity: 0;
+  position: relative;
+  transform: translateY(40%);
+  transition: none;
+}
+@media (max-width: 640px) {
+  .cardTitle {
+    font-size: min(calc(14px + 2.3vw), 2.3rem);
+  }
+
+  .cardSubtitle {
+    font-size: min(calc(12px + 1.5vw), 1.5rem);
+    margin-top: min(0.75vh, 1rem);
+  }
+}
+
+@media (max-width: 1000px) {
+  .cardSubtitleWord {
+    display: inline-block;
+    margin: 0rem 0.2rem;
+    opacity: 1;
+    position: relative;
+    transform: translateY(40%);
+    transition: none;
+  }
+
+  .techItem {
+    height: fit-content;
+    width: fit-content;
+    font-size: min(0.75vh, 1rem);
+    line-height: 1.5rem 20px;
+    padding: 0.25rem /* 4px */;
+    border-radius: 0.5rem /* 8px */;
+    color: #fff;
+    background-color: #000;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.cardBottom {
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 1rem;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techItem {
+  height: fit-content;
+  width: fit-content;
+  font-size: min(calc(8px + 0.5vw), 0.75rem);
+
+  line-height: 1rem;
+  padding: 0.4rem /* 4px */;
+  border-radius: 0.5rem /* 8px */;
+  color: #fff;
+  background-color: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+/* .cardIcon {
+  bottom: 0px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 7vmin;
+  left: 0px;
+  margin: 5vmin;
+  position: absolute;
+  transition: color 250ms ease;
+  z-index: 2;
+} */
